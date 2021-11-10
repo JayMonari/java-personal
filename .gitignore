@@ -37,3 +37,7 @@ build/
 
 ### Application Properties ###
 src/main/resources/application.properties
+
+*/.exercism
+*/HELP.md
+*/HINTS.md
