@@ -1,0 +1,19 @@
+{
+  "properties": [
+    {
+      "name": "jwt.expiration.time",
+      "type": "java.lang.String",
+      "description": "We cannot have jwt's that do not expire, so they expire after 15 minutes of inactivity on our site"
+    },
+    {
+      "name": "STRIPE_PUBLIC_TEST_KEY",
+      "type": "java.lang.String",
+      "description": "This is the key we should receive from the Front End"
+    },
+    {
+      "name": "STRIPE_SECRET_TEST_KEY",
+      "type": "java.lang.String",
+      "description": "Like the name implies, do not share this key with anyone or put it in our version control system, git."
+    }
+  ]
+}
