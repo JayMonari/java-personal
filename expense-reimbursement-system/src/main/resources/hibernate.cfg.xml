@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!-- Connention information -->
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">password</property>
+    <property name="hibernate.connection.url">jdbc:mariadb://localhost:3306/project_one</property>
+    <property name="hibernate.connection.driver_class">org.mariadb.jdbc.Driver</property>
+    <!-- Additional hibernate properties -->
+    <property name="hibernate.connection.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.format_sql">true</property>
+    <!-- the below tag determines how hibernate affects you database schema
+    CREATE will drop all existing tables & other objects with names you have provided in annotations or mapping files, then hibernate will create your schema
+    from scratch
+    UPDATE will not alter your schema, it'll add at your schema if you need more tables
+    VALIDATE hibernate will check to make sure the schema exists as expected
+    NONE will not add nor alter anything to your schema-->
+    <property name="hibernate.hbm2ddl.auto">create</property>
+    <property name="hibernate.generate_statistics">true</property>
+  </session-factory>
+</hibernate-configuration>
