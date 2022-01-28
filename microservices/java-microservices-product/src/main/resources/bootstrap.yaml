@@ -1,0 +1,22 @@
+server:
+  port: 0
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+spring:
+  application:
+    name: product-service
+  cloud:
+    config:
+      uri: http://localhost:8888
+  data:
+  mongodb:
+    uri: mongodb://192.168.1.199:27017/product-service

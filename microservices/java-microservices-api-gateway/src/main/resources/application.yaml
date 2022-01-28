@@ -1,0 +1,29 @@
+server:
+  port: 8079
+
+notlocal: 192.168.1.199
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes[0]:
+        id: product-service
+        uri: lb://product-service
+        predicates[0]: Path=/v1/product
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${notlocal:localhot}:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}-${random.uuid}
+

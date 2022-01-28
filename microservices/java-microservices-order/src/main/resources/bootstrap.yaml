@@ -1,0 +1,29 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: order-service
+  cloud:
+    config:
+      uri: http://localhost:8888
+  datasource:
+    url: jdbc:mysql://192.168.1.199:3306/order-service
+    username: orderuser
+    password: 'orderpassword'
+  rabbitmq:
+    host: 192.168.1.199
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
